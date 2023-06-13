@@ -9,7 +9,16 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   //  return TOO_HIGH;
   // }
   //return NORMAL;
-  if(value < lowerLimit) ? return TOO_LOW : (if(value > upperLimit) ? return TOO_HIGH : return NORMAL;
+  BreachType retVal = NORMAL;
+  if(value < lowerLimit)
+  {
+    retVal = TOO_LOW;
+  }
+  else if(value > upperLimit)
+  {
+    retVal = TOO_HIGH
+  }
+  return retVal;
 }
 
 BreachType classifyTemperatureBreach(
