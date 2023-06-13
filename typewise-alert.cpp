@@ -43,14 +43,10 @@ void checkAndAlert(
     batteryChar.coolingType, temperatureInC
   );
 
-  switch(alertTarget) {
-    case TO_CONTROLLER:
-      sendToController(breachType);
-      break;
-    case TO_EMAIL:
-      sendToEmail(breachType);
-      break;
-  }
+  if(alertTarget == TO_CONTROLLER)
+    sendToController(breachType);
+  else if(alertTarget == TO_EMAIL)
+    sendToEmail(breachType);  
 }
 
 void sendToController(BreachType breachType) {
@@ -60,16 +56,11 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-  switch(breachType) {
-    case TOO_LOW:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
-  }
+  if((breachType == TOO_LOW) || (breachType == TOO_HIGH))
+    printf("To: %s\n", recepient);
+  
+  if(breachType == TOO_LOW)
+    printf("Hi, the temperature is too low\n");
+  elseif(breachType == TOO_HIGH)
+    printf("Hi, the temperature is too high\n");
 }
