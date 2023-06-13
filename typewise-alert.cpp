@@ -16,7 +16,7 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   }
   else if(value > upperLimit)
   {
-    retVal = TOO_HIGH
+    retVal = TOO_HIGH;
   }
   return retVal;
 }
