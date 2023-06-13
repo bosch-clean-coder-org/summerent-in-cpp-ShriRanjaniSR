@@ -61,6 +61,6 @@ void sendToEmail(BreachType breachType) {
   
   if(breachType == TOO_LOW)
     printf("Hi, the temperature is too low\n");
-  elseif(breachType == TOO_HIGH)
+  else if(breachType == TOO_HIGH)
     printf("Hi, the temperature is too high\n");
 }
