@@ -56,7 +56,17 @@ TEST_CASE("checkAndAlert Controller") {
   checkAndAlert(TO_CONTROLLER, batteryChar, 50);
 }
 
-TEST_CASE("checkAndAlert Email") {
-  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandA"};
-  checkAndAlert(TO_EMAIL, batteryChar, 50);
+TEST_CASE("checkAndAlert Email - Too Low") {
+  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandB"};
+  checkAndAlert(TO_EMAIL, batteryChar, -5);
+}
+
+TEST_CASE("checkAndAlert Email - Too High") {
+  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandC"};
+  checkAndAlert(TO_EMAIL, batteryChar, 40);
+}
+
+TEST_CASE("checkAndAlert Email - Normal") {
+  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandD"};
+  checkAndAlert(TO_EMAIL, batteryChar, 20);
 }
