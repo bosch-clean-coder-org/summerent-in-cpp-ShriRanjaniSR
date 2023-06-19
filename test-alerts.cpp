@@ -55,3 +55,8 @@ TEST_CASE("checkAndAlert Controller") {
   BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandA"};
   checkAndAlert(TO_CONTROLLER, batteryChar, 50);
 }
+
+TEST_CASE("checkAndAlert Email") {
+  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandA"};
+  checkAndAlert(TO_EMAIL, batteryChar, 50);
+}
