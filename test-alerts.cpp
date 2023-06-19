@@ -50,3 +50,8 @@ TEST_CASE("classify temperature breach according to limits - Passive - Normal") 
 TEST_CASE("classify temperature breach according to limits - Passive - Too High") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 45) == TOO_HIGH);
 }
+
+TEST_CASE("checkAndAlert Controller") {
+  BatteryCharacter batteryChar{PASSIVE_COOLING,"BrandA"};
+  checkAndAlert(TO_CONTROLLER, batteryChar, 50);
+}
