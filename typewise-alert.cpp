@@ -23,21 +23,38 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
 
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
   BreachType breachType = classifyTemperatureBreach( batteryChar.coolingType, temperatureInC);
+  //if(alertTarget == TO_CONTROLLER)
+    //sendToController(breachType);
+  //else if(alertTarget == TO_EMAIL)
+    //sendToEmail(breachType);
+  printAlerts(alertTarget,breachType);
+}
+
+void printAlerts(AlertTarget alertTarget, BreachType breachType)
+{
   if(alertTarget == TO_CONTROLLER)
-    sendToController(breachType);
+  {
+      const unsigned short header = 0xfeed;
+      printf("%x : %x\n", header, breachType);
+  }
   else if(alertTarget == TO_EMAIL)
-    sendToEmail(breachType);  
+  {
+      const char* recepient = "a.b@c.com";
+      if(breachType == TOO_LOW)
+        printf("To: %s\nHi, the temperature is too low\n",recepient);
+      else if(breachType == TOO_HIGH)
+        printf("To: %s\nHi, the temperature is too high\n",recepient);
+  }
 }
+//void sendToController(BreachType breachType) {
+//  const unsigned short header = 0xfeed;
+//  printf("%x : %x\n", header, breachType);
+//}
 
-void sendToController(BreachType breachType) {
-  const unsigned short header = 0xfeed;
-  printf("%x : %x\n", header, breachType);
-}
-
-void sendToEmail(BreachType breachType) {
-  const char* recepient = "a.b@c.com";
-  if(breachType == TOO_LOW)
-    printf("To: %s\nHi, the temperature is too low\n",recepient);
-  else if(breachType == TOO_HIGH)
-    printf("To: %s\nHi, the temperature is too high\n",recepient);
-}
+//void sendToEmail(BreachType breachType) {
+//  const char* recepient = "a.b@c.com";
+//  if(breachType == TOO_LOW)
+//    printf("To: %s\nHi, the temperature is too low\n",recepient);
+//  else if(breachType == TOO_HIGH)
+//    printf("To: %s\nHi, the temperature is too high\n",recepient);
+//}
