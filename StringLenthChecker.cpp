@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-int acceptStringCheckerInputParamsAndAnalyse(const std::vector<std::string>& stringArray, int sizeLimit)
+int acceptStringVectorAndCheckForLength(const std::vector<std::string>& stringArray, int sizeLimit)
 {
    if((stringArray.size() == 0) || sizeLimit < 0)
    {
