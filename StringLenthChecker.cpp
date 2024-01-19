@@ -1,5 +1,5 @@
 #include <iostream>
-#include <StringLenthChecker.h>
+#include "StringLenthChecker.h"
 
 using namespace std;
 int sizeOfArray, sizeLimit;
