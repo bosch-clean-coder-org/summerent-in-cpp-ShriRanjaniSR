@@ -5,9 +5,9 @@ using namespace std;
 int sizeOfArray, sizeLimit;
 std::string *collection;
 
-int acceptStringCheckerInputParamsAndAnalyse(int size, const vector<string>& stringArray, int sizeLimit)
+int acceptStringCheckerInputParamsAndAnalyse(const vector<string>& stringArray, int sizeLimit)
 {
-   if(size < 1 || (stringArray.size() == 0) || sizeLimit < 0)
+   if(stringArray.size() == 0) || sizeLimit < 0)
    {
        cout <<"Invalid Input \n";
        return -1;
