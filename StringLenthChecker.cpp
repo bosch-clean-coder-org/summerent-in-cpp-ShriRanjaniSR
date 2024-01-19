@@ -35,25 +35,8 @@ int acceptStringVectorAndCheckForLength(const std::vector<std::string>& stringAr
        return -1;
    }
    displayStringInput(stringArray);
-    //cout << "The entered strings are: ";
-    //for(unsigned int i = 0; i < stringArray.size(); i++)
-    //{
-    //	cout << stringArray[i] << " ";
-    //}
    int count = checkForSizeLimitAndPrintToConsole(stringArray,sizeLimit);
    return count;
-
-    //int count=0;
-    //cout << "The strings that qualify are: ";
-    //for(unsigned int i = 0; i < stringArray.size(); i++)
-    //{
-    //	if(stringArray[i].length() > sizeLimit)
-    //	{
-    //	    count++;
-    //	    cout << stringArray[i] << " ";
-    //	}
-    //}
-    //return count;
 }
 
 
