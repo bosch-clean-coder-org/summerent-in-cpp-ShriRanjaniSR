@@ -76,7 +76,7 @@ TEST_CASE("checkAndAlert Email - Normal") {
 }
 */
 
-#include <StringLenthChecker.h>
+#include "StringLenthChecker.h"
 
 std::vector<std::string> names{"Blue", "Magenta",
                                   "Orange", "Maroon", "Rainbow"};
