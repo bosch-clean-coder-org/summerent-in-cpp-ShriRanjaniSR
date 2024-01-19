@@ -1,11 +1,12 @@
 #include <iostream>
 #include "StringLenthChecker.h"
+#include <vector>
+#include <string>
 
-using namespace std;
 int sizeOfArray, sizeLimit;
 std::string *collection;
 
-int acceptStringCheckerInputParamsAndAnalyse(const vector<string>& stringArray, int sizeLimit)
+int acceptStringCheckerInputParamsAndAnalyse(const std::vector<std::string>& stringArray, int sizeLimit)
 {
    if(stringArray.size() == 0) || sizeLimit < 0)
    {
