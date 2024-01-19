@@ -1,4 +1,4 @@
 #include <iostream>
 using namespace std;
 
-int acceptStringCheckerInputParamsAndAnalyse(const vector<string>& stringArray, int sizeLimit)
+int acceptStringCheckerInputParamsAndAnalyse(const std::vector<std::string>& stringArray, int sizeLimit)
