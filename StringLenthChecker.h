@@ -1,6 +1,4 @@
 #include <iostream>
 using namespace std;
 
-void acceptStringCheckerInputParams();
-void checkStringsAgainstSize();
-
+int acceptStringCheckerInputParamsAndAnalyse(int size, const vector<string>& stringArray, int sizeLimit)
