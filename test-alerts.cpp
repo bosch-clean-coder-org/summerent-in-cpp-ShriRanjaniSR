@@ -74,3 +74,8 @@ TEST_CASE("checkAndAlert Email - Normal") {
 }
 */
 
+#include <StringLenthChecker.h>
+
+TEST_CASE("infers the breach according to limits - Too Low") {
+  REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
+}
