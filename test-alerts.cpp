@@ -80,6 +80,19 @@ TEST_CASE("checkAndAlert Email - Normal") {
 
 std::vector<std::string> names{"Blue", "Magenta",
                                   "Orange", "Maroon", "Rainbow"};
-TEST_CASE("Valid UseCase - Single Match") {
-   REQUIRE(acceptStringCheckerInputParamsAndAnalyse(names, 7) == 1);
+
+TEST_CASE("InValid UseCase - Incorrect InputSize") {
+   REQUIRE(acceptStringVectorAndCheckForLength(names, -1) == -1);
+}
+
+TEST_CASE("Valid UseCase - No Match") {
+   REQUIRE(acceptStringVectorAndCheckForLength(names, 7) == 0);
+}
+
+TEST_CASE("Valid UseCase - Few Matches") {
+   REQUIRE(acceptStringVectorAndCheckForLength(names, 5) == 4);
+}
+
+TEST_CASE("Valid UseCase - All Matches") {
+   REQUIRE(acceptStringVectorAndCheckForLength(names, 3) == 5);
 }
