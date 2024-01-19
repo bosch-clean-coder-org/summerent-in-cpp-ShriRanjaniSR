@@ -78,15 +78,20 @@ TEST_CASE("checkAndAlert Email - Normal") {
 
 #include "StringLenthChecker.h"
 
-std::vector<std::string> names{"Blue", "Magenta",
-                                  "Orange", "Maroon", "Rainbow"};
+std::vector<std::string> names;
+
+TEST_CASE("InValid UseCase - Empty String Array") {
+   REQUIRE(acceptStringVectorAndCheckForLength(names, 5) == -1);
+}
+
+names.push_back("Blue");
+names.push_back("Magenta");
+names.push_back("Orange");
+names.push_back("Maroon");
+names.push_back("Rainbow");
 
 TEST_CASE("InValid UseCase - Incorrect SizeLimit") {
    REQUIRE(acceptStringVectorAndCheckForLength(names, -1) == -1);
-}
-
-TEST_CASE("InValid UseCase - Empty String Array") {
-   REQUIRE(acceptStringVectorAndCheckForLength(NULL, 5) == -1);
 }
 
 TEST_CASE("Valid UseCase - No Match") {
