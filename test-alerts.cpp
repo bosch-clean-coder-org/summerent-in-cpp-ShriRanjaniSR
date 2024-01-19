@@ -81,5 +81,5 @@ TEST_CASE("checkAndAlert Email - Normal") {
 std::vector<std::string> names{"Blue", "Magenta",
                                   "Orange", "Maroon", "Rainbow"};
 TEST_CASE("Valid UseCase - Single Match") {
-   REQUIRE(acceptStringCheckerInputParamsAndAnalyse(const vector<string>& stringArray, 7) == 1);
+   REQUIRE(acceptStringCheckerInputParamsAndAnalyse(names, 7) == 1);
 }
