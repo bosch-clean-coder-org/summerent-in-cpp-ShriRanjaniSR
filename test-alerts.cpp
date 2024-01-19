@@ -81,8 +81,12 @@ TEST_CASE("checkAndAlert Email - Normal") {
 std::vector<std::string> names{"Blue", "Magenta",
                                   "Orange", "Maroon", "Rainbow"};
 
-TEST_CASE("InValid UseCase - Incorrect InputSize") {
+TEST_CASE("InValid UseCase - Incorrect SizeLimit") {
    REQUIRE(acceptStringVectorAndCheckForLength(names, -1) == -1);
+}
+
+TEST_CASE("InValid UseCase - Empty String Array") {
+   REQUIRE(acceptStringVectorAndCheckForLength(NULL, 5) == -1);
 }
 
 TEST_CASE("Valid UseCase - No Match") {
