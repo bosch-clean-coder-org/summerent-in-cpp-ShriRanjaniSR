@@ -89,7 +89,7 @@ TEST_CASE("InValid UseCase - Incorrect SizeLimit") {
 }
 
 TEST_CASE("Valid UseCase - No Match") {
-   REQUIRE(acceptStringVectorAndCheckForLength(names, 7) == 0);
+   REQUIRE(acceptStringVectorAndCheckForLength(names, 8) == 0);
 }
 
 TEST_CASE("Valid UseCase - Few Matches") {
