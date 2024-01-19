@@ -3,12 +3,9 @@
 #include <vector>
 #include <string>
 
-int sizeOfArray, sizeLimit;
-std::string *collection;
-
 int acceptStringCheckerInputParamsAndAnalyse(const std::vector<std::string>& stringArray, int sizeLimit)
 {
-   if(stringArray.size() == 0) || sizeLimit < 0)
+   if((stringArray.size() == 0) || sizeLimit < 0)
    {
        cout <<"Invalid Input \n";
        return -1;
@@ -20,7 +17,7 @@ int acceptStringCheckerInputParamsAndAnalyse(const std::vector<std::string>& str
     }
     int count=0;
     cout << "The strings that qualify are: ";
-    for(unsigned int i = 0; i < sizeOfArray; i++)
+    for(unsigned int i = 0; i < stringArray.size(); i++)
     {
 	if(stringArray[i].length() > sizeLimit)
 	{
